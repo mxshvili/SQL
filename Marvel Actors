@@ -47,4 +47,13 @@ AS Costar_7, h.fullname
 AS Costar_8, i.fullname 
 AS Costar_9 
 FROM movies 
-LEFT OUTER JOIN famous_people a ON movies.person1_id=a.id LEFT OUTER JOIN famous_people b ON movies.person2_id=b.id LEFT OUTER JOIN famous_people c ON movies.person3_id=c.id LEFT OUTER JOIN famous_people d ON movies.person4_id=d.id LEFT OUTER JOIN famous_people e ON movies.person5_id=e.id LEFT OUTER JOIN famous_people f ON movies.person6_id=f.id LEFT OUTER JOIN famous_people g ON movies.person7_id=g.id LEFT OUTER JOIN famous_people h ON movies.person8_id=h.id LEFT OUTER JOIN famous_people i ON movies.person9_id=i.id ORDER BY movies.movie_title;
+LEFT OUTER JOIN famous_people a ON movies.person1_id=a.id 
+LEFT OUTER JOIN famous_people b ON movies.person2_id=b.id 
+LEFT OUTER JOIN famous_people c ON movies.person3_id=c.id 
+LEFT OUTER JOIN famous_people d ON movies.person4_id=d.id 
+LEFT OUTER JOIN famous_people e ON movies.person5_id=e.id 
+LEFT OUTER JOIN famous_people f ON movies.person6_id=f.id 
+LEFT OUTER JOIN famous_people g ON movies.person7_id=g.id 
+LEFT OUTER JOIN famous_people h ON movies.person8_id=h.id 
+LEFT OUTER JOIN famous_people i ON movies.person9_id=i.id 
+ORDER BY movies.movie_title;
