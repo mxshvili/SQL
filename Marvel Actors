@@ -1,0 +1,50 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, fullname text); 
+INSERT INTO famous_people VALUES (1, "Robert Downey Jr."); 
+INSERT INTO famous_people VALUES (2, "Chris Hemsworth");
+INSERT INTO famous_people VALUES (3, "Scarlett Johanson"); 
+INSERT INTO famous_people VALUES (4, "Chris Evans");
+INSERT INTO famous_people VALUES (5, "Mark Ruffalo");
+INSERT INTO famous_people VALUES (6, "Jeremy Renner");
+INSERT INTO famous_people VALUES (7, "Paul Rudd"); 
+INSERT INTO famous_people VALUES (8, "Brie Larson");
+INSERT INTO famous_people VALUES (9, "Elizabeth Olsen");
+INSERT INTO famous_people VALUES (10, "Karen Gillan");
+INSERT INTO famous_people VALUES (11, "Tom Holland");
+INSERT INTO famous_people VALUES (12, "Josh Brolin");
+INSERT INTO famous_people VALUES (13, "Sebastian Stan");
+INSERT INTO famous_people VALUES (14, "Chadwick Boseman"); 
+INSERT INTO famous_people VALUES (15, "Jon Favreau");
+INSERT INTO famous_people VALUES (16, "Zoe Saldana");
+INSERT INTO famous_people VALUES (17, "Tom Hiddleston");
+INSERT INTO famous_people VALUES (18, "Chris Pratt");
+INSERT INTO famous_people VALUES (19, "Benedict Cumberbatch"); 
+INSERT INTO famous_people VALUES (20, "Anthony Mackie");
+INSERT INTO famous_people VALUES (21, "Bradley Cooper");
+INSERT INTO famous_people VALUES (22, "Tilda Swinton");
+INSERT INTO famous_people VALUES (23, "Vin Diesel");
+INSERT INTO famous_people VALUES (24, "Samuel L. Jackson"); 
+INSERT INTO famous_people VALUES (25, "Gwyneth Paltrow");
+INSERT INTO famous_people VALUES (26, "Natalie Portman");
+INSERT INTO famous_people VALUES (27, "Tessa Thompson");
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY, movie_title TEXT, person1_id INTEGER, person2_id INTEGER, person3_id INTEGER, person4_id INTEGER, person5_id INTEGER, person6_id INTEGER, person7_id INTEGER, person8_id INTEGER, person9_id INTEGER); 
+INSERT INTO movies VALUES (1, "Iron Man", 1, 15, 25, NULL, NULL, NULL, NULL, NULL, NULL); 
+INSERT INTO movies VALUES (2, "Thor", 2, 26, NULL, NULL, NULL, NULL, NULL, NULL, NULL); 
+INSERT INTO movies VALUES (3, "Captain America: The First Avenger", 4, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL); 
+INSERT INTO movies VALUES (4, "Marvel's The Avengers", 1, 2, 3, 4, 5, 6, 17, 24, 25); 
+INSERT INTO movies VALUEs (5, "Captain America: The Winter Soldier", 2, 3, 13, NULL, NULL, NULL, NULL, NULL, NULL);
+
+SELECT movies.movie_title 
+
+AS Costar_1, b.fullname 
+AS Costar_2, c.fullname 
+AS Costar_3, d.fullname 
+AS Costar_4, e.fullname 
+AS Costar_5, f.fullname 
+AS Costar_6, g.fullname
+AS Costar_7, h.fullname 
+AS Costar_8, i.fullname 
+AS Costar_9 
+FROM movies 
+LEFT OUTER JOIN famous_people a ON movies.person1_id=a.id LEFT OUTER JOIN famous_people b ON movies.person2_id=b.id LEFT OUTER JOIN famous_people c ON movies.person3_id=c.id LEFT OUTER JOIN famous_people d ON movies.person4_id=d.id LEFT OUTER JOIN famous_people e ON movies.person5_id=e.id LEFT OUTER JOIN famous_people f ON movies.person6_id=f.id LEFT OUTER JOIN famous_people g ON movies.person7_id=g.id LEFT OUTER JOIN famous_people h ON movies.person8_id=h.id LEFT OUTER JOIN famous_people i ON movies.person9_id=i.id ORDER BY movies.movie_title;
